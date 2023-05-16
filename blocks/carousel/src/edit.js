@@ -8,6 +8,8 @@ import {
 	useInnerBlocksProps,
 	InspectorControls,
 	RichText,
+	BlockControls,
+	AlignmentToolbar,
 	store as blockEditorStore,
 } from '@wordpress/block-editor';
 import {
@@ -40,6 +42,7 @@ import {
 	AUTOPLAY_DEFAULT,
 	ALLOW_LOOP,
 	LOOP_DEFAULT,
+	// Logo integration
 	SCALE_FACTOR_DEFAULT,
 	COLOR_SCHEMES,
 	BACKGROUND_COLOR_DEFAULT,
@@ -64,6 +67,7 @@ export default function Edit({ attributes, setAttributes, clientId, isSelected }
 		hasNavigation = HAS_NAVIGATION_DEFAULT,
 		shouldAutoplay = AUTOPLAY_DEFAULT,
 		shouldLoop = LOOP_DEFAULT,
+		// Logo integration
 		scaleFactor = SCALE_FACTOR_DEFAULT,
 		backgroundColor = BACKGROUND_COLOR_DEFAULT,
 		color = COLOR_DEFAULT,
@@ -83,6 +87,7 @@ export default function Edit({ attributes, setAttributes, clientId, isSelected }
 	const onHasNavigationChange = (value) => onChange('hasNavigation', value ? 'true' : 'false');
 	const onShouldAutoplayChange = (value) => onChange('shouldAutoplay', value ? 'true' : 'false');
 	const onShouldLoopChange = (value) => onChange('shouldLoop', value ? 'true' : 'false');
+	// Logo integration
 	const onScaleFactorChange = (value) => onChange('scaleFactor', value);
 	const onBackgroundColorChange = (value) => onChange('backgroundColor', value);
 	const onColorChange = (value) => onChange('color', value);

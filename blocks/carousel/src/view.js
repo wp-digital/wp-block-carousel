@@ -68,7 +68,7 @@ domReady(async () => {
 								prevEl: '.swiper-button-prev',
 						  }
 						: false,
-				autoplay: shouldAutoplay === 'true',
+				autoplay: shouldAutoplay === 'true' ? { delay: 3000 } : false,
 				loop: shouldLoop === 'true',
 				modules: [Navigation, Pagination],
 			})
@@ -93,9 +93,6 @@ domReady(async () => {
 				handler(element);
 				observer.unobserve(element);
 			});
-		},
-		{
-			threshold: 0.75,
 		}
 	);
 

@@ -8,6 +8,7 @@ import {
 	HAS_NAVIGATION_DEFAULT,
 	AUTOPLAY_DEFAULT,
 	LOOP_DEFAULT,
+	// Logo integration
 	SCALE_FACTOR_DEFAULT,
 	BACKGROUND_COLOR_DEFAULT,
 	COLOR_DEFAULT,
@@ -74,6 +75,7 @@ export default {
 		selector: `.${BLOCK_CLASS_NAME} .swiper`,
 		attribute: 'data-should-loop',
 	},
+	// Logo integration
 	scaleFactor: {
 		type: 'number',
 		default: SCALE_FACTOR_DEFAULT,

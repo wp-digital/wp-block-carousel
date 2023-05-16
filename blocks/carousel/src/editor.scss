@@ -32,11 +32,14 @@
 
 	.swiper-wrapper {
 
-		> .wp-block {
+		.wp-block {
 			margin-top: 0;
-			margin-right: var(--space-between);
 			margin-bottom: 0;
 			max-width: none;
+		}
+
+		> .wp-block {
+			margin-right: var(--space-between);
 		}
 	}
 
