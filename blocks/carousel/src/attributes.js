@@ -2,11 +2,15 @@ import { BLOCK_CLASS_NAME } from './constants';
 import {
 	HAS_TITLE_DEFAULT,
 	HAS_DESCRIPTION_DEFAULT,
-	SLIDES_PER_VIEW_MAX,
 	SLIDES_PER_VIEW_DEFAULT,
+	SPACE_BETWEEN_DEFAULT,
 	HAS_PAGINATION_DEFAULT,
 	HAS_NAVIGATION_DEFAULT,
-	HAS_SCROLLBAR_DEFAULT,
+	AUTOPLAY_DEFAULT,
+	LOOP_DEFAULT,
+	SCALE_FACTOR_DEFAULT,
+	BACKGROUND_COLOR_DEFAULT,
+	COLOR_DEFAULT,
 } from './constants/editor';
 
 export default {
@@ -29,21 +33,57 @@ export default {
 		selector: `.${BLOCK_CLASS_NAME}__description`,
 	},
 	slidesPerView: {
-		type: 'integer',
-		minimum: 1,
-		maximum: SLIDES_PER_VIEW_MAX,
+		type: 'string',
 		default: SLIDES_PER_VIEW_DEFAULT,
+		source: 'attribute',
+		selector: `.${BLOCK_CLASS_NAME} .swiper`,
+		attribute: 'data-slides-per-view',
+	},
+	spaceBetween: {
+		type: 'number',
+		default: SPACE_BETWEEN_DEFAULT,
+		source: 'attribute',
+		selector: `.${BLOCK_CLASS_NAME} .swiper`,
+		attribute: 'data-space-between',
 	},
 	hasPagination: {
-		type: 'boolean',
+		type: 'string',
 		default: HAS_PAGINATION_DEFAULT,
+		source: 'attribute',
+		selector: `.${BLOCK_CLASS_NAME} .swiper`,
+		attribute: 'data-has-pagination',
 	},
 	hasNavigation: {
-		type: 'boolean',
+		type: 'string',
 		default: HAS_NAVIGATION_DEFAULT,
+		source: 'attribute',
+		selector: `.${BLOCK_CLASS_NAME} .swiper`,
+		attribute: 'data-has-navigation',
 	},
-	hasScrollbar: {
-		type: 'boolean',
-		default: HAS_SCROLLBAR_DEFAULT,
+	shouldAutoplay: {
+		type: 'string',
+		default: AUTOPLAY_DEFAULT,
+		source: 'attribute',
+		selector: `.${BLOCK_CLASS_NAME} .swiper`,
+		attribute: 'data-should-autoplay',
+	},
+	shouldLoop: {
+		type: 'string',
+		default: LOOP_DEFAULT,
+		source: 'attribute',
+		selector: `.${BLOCK_CLASS_NAME} .swiper`,
+		attribute: 'data-should-loop',
+	},
+	scaleFactor: {
+		type: 'number',
+		default: SCALE_FACTOR_DEFAULT,
+	},
+	backgroundColor: {
+		type: 'string',
+		default: BACKGROUND_COLOR_DEFAULT,
+	},
+	color: {
+		type: 'string',
+		default: COLOR_DEFAULT,
 	},
 };

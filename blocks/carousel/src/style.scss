@@ -1,0 +1,10 @@
+.wpd-block-carousel {
+
+	.swiper {
+		visibility: hidden;
+
+		&.swiper-initialized {
+			visibility: visible;
+		}
+	}
+}

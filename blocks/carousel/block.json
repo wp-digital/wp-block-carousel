@@ -1,16 +1,16 @@
 {
-  "apiVersion": 2,
-  "name": "wpd/block-carousel",
-  "version": "1.0.0",
-  "title": "Carousel",
-  "category": "design",
-  "description": "Slider list of images, cards, logos.",
-  "supports": {
-	"html": false
-  },
-  "textdomain": "wpd-blocks",
-  "editorScript": "file:./build/index.js",
-  "script": "file:./build/view.js",
-  "editorStyle": "file:./build/index.css",
-  "style": "file:./build/style-index.css"
+	"apiVersion": 2,
+	"name": "wpd/block-carousel",
+	"version": "1.0.0",
+	"title": "Carousel",
+	"category": "design",
+	"description": "Slider list of images, cards, logos.",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "wpd-blocks",
+	"editorScript": "file:./build/index.js",
+	"script": "file:./build/view.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
 }

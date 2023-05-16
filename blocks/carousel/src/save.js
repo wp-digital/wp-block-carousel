@@ -5,12 +5,16 @@ import {
 	TITLE_TAG,
 	HAS_TITLE_DEFAULT,
 	HAS_DESCRIPTION_DEFAULT,
+	SLIDES_PER_VIEW_DEFAULT,
+	SPACE_BETWEEN_DEFAULT,
 	ALLOW_PAGINATION,
 	HAS_PAGINATION_DEFAULT,
 	ALLOW_NAVIGATION,
 	HAS_NAVIGATION_DEFAULT,
-	ALLOW_SCROLLBAR,
-	HAS_SCROLLBAR_DEFAULT,
+	ALLOW_AUTOPLAY,
+	AUTOPLAY_DEFAULT,
+	ALLOW_LOOP,
+	LOOP_DEFAULT,
 } from './constants/editor';
 
 export default function save({ attributes }) {
@@ -19,9 +23,12 @@ export default function save({ attributes }) {
 		title,
 		hasDescription = HAS_DESCRIPTION_DEFAULT,
 		description,
+		slidesPerView = SLIDES_PER_VIEW_DEFAULT,
+		spaceBetween = SPACE_BETWEEN_DEFAULT,
 		hasPagination = HAS_PAGINATION_DEFAULT,
 		hasNavigation = HAS_NAVIGATION_DEFAULT,
-		hasScrollbar = HAS_SCROLLBAR_DEFAULT,
+		shouldAutoplay = AUTOPLAY_DEFAULT,
+		shouldLoop = LOOP_DEFAULT,
 	} = attributes;
 
 	return (
@@ -41,20 +48,27 @@ export default function save({ attributes }) {
 					/>
 				)}
 			</div>
-			<div className="swiper">
+			<div
+				className="swiper"
+				data-slides-per-view={slidesPerView}
+				data-space-between={spaceBetween}
+				{...(ALLOW_PAGINATION && { 'data-has-pagination': hasPagination })}
+				{...(ALLOW_NAVIGATION && { 'data-has-navigation': hasNavigation })}
+				{...(ALLOW_AUTOPLAY && { 'data-should-autoplay': shouldAutoplay })}
+				{...(ALLOW_LOOP && { 'data-should-loop': shouldLoop })}
+			>
 				<div
 					{...useInnerBlocksProps.save({
 						className: 'swiper-wrapper',
 					})}
 				/>
-				{ALLOW_PAGINATION && hasPagination && <div className="swiper-pagination" />}
-				{ALLOW_NAVIGATION && hasNavigation && (
+				{ALLOW_PAGINATION && hasPagination === 'true' && <div className="swiper-pagination" />}
+				{ALLOW_NAVIGATION && hasNavigation === 'true' && (
 					<>
 						<div className="swiper-button-prev" />
 						<div className="swiper-button-next" />
 					</>
 				)}
-				{ALLOW_SCROLLBAR && hasScrollbar && <div className="swiper-scrollbar" />}
 			</div>
 		</div>
 	);

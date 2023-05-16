@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwp_block_carousel=self.webpackChunkwp_block_carousel||[]).push([[721],{721:function(c,e,s){s.r(e)}}]);

@@ -7,7 +7,7 @@
 	"main": "build/index.js",
 	"scripts": {
 		"build:slide": "wp-scripts build blocks/slide/src/index.js --output-path=blocks/slide/build/",
-		"build:carousel": "wp-scripts build blocks/carousel/src/index.js --output-path=blocks/carousel/build/",
+		"build:carousel": "wp-scripts build blocks/carousel/src/index.js blocks/carousel/src/view.js --output-path=blocks/carousel/build/",
 		"build": "npm run build:slide && npm run build:carousel",
 		"format": "wp-scripts format",
 		"lint:css": "wp-scripts lint-style",
@@ -15,7 +15,7 @@
 		"lint:js": "wp-scripts lint-js",
 		"lint:js:fix": "wp-scripts lint-js --fix",
 		"start:slide": "wp-scripts start blocks/slide/src/index.js --output-path=blocks/slide/build/",
-		"start:carousel": "wp-scripts start blocks/carousel/src/index.js --output-path=blocks/carousel/build/",
+		"start:carousel": "wp-scripts start blocks/carousel/src/index.js blocks/carousel/src/view.js --output-path=blocks/carousel/build/",
 		"packages-update": "wp-scripts packages-update"
 	},
 	"dependencies": {

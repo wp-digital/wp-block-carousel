@@ -6,9 +6,11 @@ export default function save() {
 	const blockProps = useBlockProps.save({
 		className: `swiper-slide ${BLOCK_CLASS_NAME}`,
 	});
-	const combinedBlockProps = useInnerBlocksProps.save(blockProps);
+	const { children, ...combinedBlockProps } = useInnerBlocksProps.save(blockProps);
 
 	return (
-		<div {...combinedBlockProps} />
+		<div {...combinedBlockProps}>
+			<div className={`${BLOCK_CLASS_NAME}__inner`}>{children}</div>
+		</div>
 	);
 }

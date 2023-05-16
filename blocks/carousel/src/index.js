@@ -14,6 +14,11 @@ registerBlockType('wpd/block-carousel', {
 		className: false,
 	},
 	attributes,
+	providesContext: {
+		'innocode/block-logos-scaleFactor': 'scaleFactor',
+		'innocode/block-logos-backgroundColor': 'backgroundColor',
+		'innocode/block-logos-color': 'color',
+	},
 	edit: Edit,
 	save,
 	icon,
