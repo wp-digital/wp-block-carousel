@@ -8,8 +8,7 @@ import {
 	useInnerBlocksProps,
 	InspectorControls,
 	RichText,
-	BlockControls,
-	AlignmentToolbar,
+	InnerBlocks,
 	store as blockEditorStore,
 } from '@wordpress/block-editor';
 import {
@@ -38,6 +37,7 @@ import {
 	ALLOW_NAVIGATION,
 	HAS_NAVIGATION_DEFAULT,
 	ALLOWED_BLOCKS,
+	TEMPLATE,
 	ALLOW_AUTOPLAY,
 	AUTOPLAY_DEFAULT,
 	ALLOW_LOOP,
@@ -247,6 +247,8 @@ export default function Edit({ attributes, setAttributes, clientId, isSelected }
 						{
 							allowedBlocks: ALLOWED_BLOCKS,
 							orientation: 'horizontal',
+							renderAppender: InnerBlocks.ButtonBlockAppender,
+							template: TEMPLATE,
 						}
 					)}
 				/>

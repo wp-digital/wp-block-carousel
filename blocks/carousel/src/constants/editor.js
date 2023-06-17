@@ -23,6 +23,8 @@ export const LOOP_DEFAULT = applyFilters('wpd.block-carousel.loop.default', fals
 
 export const ALLOWED_BLOCKS = ['wpd/block-slide'];
 
+export const TEMPLATE = applyFilters('wpd.block-carousel.template', [['wpd/block-slide', {}]]);
+
 // Integration with Logos block
 export const SCALE_FACTOR_DEFAULT = applyFilters('innocode.block-logos.scale_factor.default', 525);
 export const COLOR_SCHEMES = applyFilters('innocode.block-logos.color.schemes', [

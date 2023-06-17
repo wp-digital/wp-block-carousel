@@ -11,13 +11,13 @@ domReady(async () => {
 		return;
 	}
 
-	const { default: Swiper, Navigation, Pagination } = await import('swiper');
+	const { default: Swiper } = await import('swiper');
 
 	await import('swiper/css');
 
-	let isPaginationCSSLoaded = false;
-	let isNavigationCSSLoaded = false;
-	let isAutoplayCSSLoaded = false;
+	let Navigation = null;
+	let Pagination = null;
+	let Autoplay = null;
 
 	window.wpd = window.wpd || {};
 	window.wpd.blocks = window.wpd.blocks || {};
@@ -32,23 +32,36 @@ domReady(async () => {
 			shouldAutoplay,
 			shouldLoop,
 		} = element.dataset;
+		const modules = [];
 
-		if (hasPagination === 'true' && !isPaginationCSSLoaded) {
-			await import('swiper/css/pagination');
+		if (hasNavigation === 'true') {
+			if (Navigation === null) {
+				({ Navigation } = await import('swiper'));
 
-			isPaginationCSSLoaded = true;
+				await import('swiper/css/navigation');
+			}
+
+			modules.push(Navigation);
 		}
 
-		if (hasNavigation === 'true' && !isNavigationCSSLoaded) {
-			await import('swiper/css/navigation');
+		if (hasPagination === 'true') {
+			if (Pagination === null) {
+				({ Pagination } = await import('swiper'));
 
-			isNavigationCSSLoaded = true;
+				await import('swiper/css/pagination');
+			}
+
+			modules.push(Pagination);
 		}
 
-		if (shouldAutoplay === 'true' && !isAutoplayCSSLoaded) {
-			await import('swiper/css/autoplay');
+		if (shouldAutoplay === 'true') {
+			if (Autoplay === null) {
+				({ Autoplay } = await import('swiper'));
 
-			isAutoplayCSSLoaded = true;
+				await import('swiper/css/autoplay');
+			}
+
+			modules.push(Autoplay);
 		}
 
 		window.wpd.blocks.carousel.push(
@@ -70,7 +83,7 @@ domReady(async () => {
 						: false,
 				autoplay: shouldAutoplay === 'true' ? { delay: 3000 } : false,
 				loop: shouldLoop === 'true',
-				modules: [Navigation, Pagination],
+				modules,
 			})
 		);
 	};
@@ -81,20 +94,18 @@ domReady(async () => {
 		return;
 	}
 
-	const observer = new window.IntersectionObserver(
-		(entries) => {
-			entries.forEach((entry) => {
-				if (!entry.isIntersecting) {
-					return;
-				}
+	const observer = new window.IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+			if (!entry.isIntersecting) {
+				return;
+			}
 
-				const element = entry.target;
+			const element = entry.target;
 
-				handler(element);
-				observer.unobserve(element);
-			});
-		}
-	);
+			handler(element);
+			observer.unobserve(element);
+		});
+	});
 
 	elements.forEach((element) => {
 		observer.observe(element);
