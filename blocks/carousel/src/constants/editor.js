@@ -26,16 +26,16 @@ export const ALLOWED_BLOCKS = ['wpd/block-slide'];
 export const TEMPLATE = applyFilters('wpd.block-carousel.template', [['wpd/block-slide', {}]]);
 
 // Integration with Logos block
-export const SCALE_FACTOR_DEFAULT = applyFilters('innocode.block-logos.scale_factor.default', 525);
-export const COLOR_SCHEMES = applyFilters('innocode.block-logos.color.schemes', [
+export const SCALE_FACTOR_DEFAULT = applyFilters('wpd.block-logos.scale_factor.default', 525);
+export const COLOR_SCHEMES = applyFilters('wpd.block-logos.color.schemes', [
 	{
-		name: __('Dark', 'innocode-blocks'),
+		name: __('Dark', 'wpd-blocks'),
 		color: '#000',
 	},
 	{
-		name: __('Light', 'innocode-blocks'),
+		name: __('Light', 'wpd-blocks'),
 		color: '#fff',
 	},
 ]);
-export const BACKGROUND_COLOR_DEFAULT = applyFilters('innocode.block-logos.background_color.default', undefined);
-export const COLOR_DEFAULT = applyFilters('innocode.block-logos.color.default', undefined);
+export const BACKGROUND_COLOR_DEFAULT = applyFilters('wpd.block-logos.background_color.default', undefined);
+export const COLOR_DEFAULT = applyFilters('wpd.block-logos.color.default', undefined);

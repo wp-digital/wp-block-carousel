@@ -1,1 +1,1 @@
-"use strict";(self.webpackChunkwp_block_carousel=self.webpackChunkwp_block_carousel||[]).push([[530],{530:function(c,e,s){s.r(e)}}]);
+"use strict";(globalThis.webpackChunkwp_block_carousel=globalThis.webpackChunkwp_block_carousel||[]).push([[530],{530:(l,c,s)=>{s.r(c)}}]);

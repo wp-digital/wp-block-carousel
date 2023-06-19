@@ -1,1 +1,1 @@
-export const ALLOWED_BLOCKS = ['innocode/block-card', 'innocode/block-logo', 'core/image'];
+export const ALLOWED_BLOCKS = ['wpd/block-card', 'wpd/block-logo', 'core/image'];
