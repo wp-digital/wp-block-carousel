@@ -2,8 +2,7 @@ import { useBlockProps, useInnerBlocksProps, InnerBlocks, BlockIcon } from '@wor
 import { Placeholder } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-import { BLOCK_CLASS_NAME } from './constants';
-import { ALLOWED_BLOCKS } from './constants/editor';
+import { BLOCK_CLASS_NAME, ALLOWED_BLOCKS } from './constants';
 
 import './editor.scss';
 
