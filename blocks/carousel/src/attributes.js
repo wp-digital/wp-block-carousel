@@ -41,7 +41,7 @@ export default {
 		attribute: 'data-slides-per-view',
 	},
 	spaceBetween: {
-		type: 'number',
+		type: 'string',
 		default: SPACE_BETWEEN_DEFAULT,
 		source: 'attribute',
 		selector: `.${BLOCK_CLASS_NAME} .swiper`,
