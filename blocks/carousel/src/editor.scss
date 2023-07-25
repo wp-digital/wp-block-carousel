@@ -1,16 +1,5 @@
 .wpd-block-carousel {
 
-	&_is-opened {
-
-		.swiper-wrapper {
-			flex-wrap: wrap;
-
-			> .wp-block {
-				margin-bottom: var(--space-between);
-			}
-		}
-	}
-
 	&__title {
 
 		.editor-styles-wrapper & {
@@ -43,6 +32,17 @@
 		}
 	}
 
+	&_is-opened {
+
+		.swiper-wrapper {
+			flex-wrap: wrap;
+
+			> .wp-block {
+				margin-bottom: var(--space-between);
+			}
+		}
+	}
+
 	@each $columns in [1, 2, 3, 4, 5, 6] {
 		&_columns-#{ $columns } {
 
@@ -55,6 +55,16 @@
 						margin-right: 0;
 					}
 				}
+			}
+		}
+	}
+
+	&-inner-blocks {
+
+		&__appender {
+
+			.block-editor-button-block-appender {
+				background-color: #fff;
 			}
 		}
 	}

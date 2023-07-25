@@ -55,6 +55,14 @@ import 'swiper/css/navigation';
 
 import './editor.scss';
 
+function Appender({ ...props }) {
+	return (
+		<div className={`${BLOCK_CLASS_NAME}-inner-blocks__appender`}>
+			<InnerBlocks.ButtonBlockAppender {...props} />
+		</div>
+	);
+}
+
 export default function Edit({ attributes, setAttributes, clientId, isSelected }) {
 	const {
 		hasTitle = HAS_TITLE_DEFAULT,
@@ -247,7 +255,7 @@ export default function Edit({ attributes, setAttributes, clientId, isSelected }
 						{
 							allowedBlocks: ALLOWED_BLOCKS,
 							orientation: 'horizontal',
-							renderAppender: InnerBlocks.ButtonBlockAppender,
+							renderAppender: isOpened && Appender,
 							template: TEMPLATE,
 						}
 					)}
