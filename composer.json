@@ -1,6 +1,6 @@
 {
 	"name": "wp-digital/wp-block-carousel",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"type": "wordpress-plugin",
 	"license": "GPL-2.0+",
 	"require": {

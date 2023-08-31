@@ -1,7 +1,7 @@
 {
 	"apiVersion": 2,
 	"name": "wpd/block-slide",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"title": "Slide",
 	"category": "design",
 	"description": "Slide of carousel with image.",

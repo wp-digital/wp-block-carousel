@@ -16,5 +16,9 @@
 		&.swiper-initialized {
 			visibility: visible;
 		}
+
+		&[data-has-pagination="true"] {
+			padding-bottom: 2em;
+		}
 	}
 }
